@@ -6,6 +6,7 @@ export interface BuildOptions {
 		build: string;
 	};
 	isDev: boolean;
+	port: number;
 }
 
 export type BuildMode = "production" | "development";

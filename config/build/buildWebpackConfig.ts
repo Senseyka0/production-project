@@ -1,5 +1,6 @@
 import webpack from "webpack";
 
+import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
 import { buildResolvers } from "./buildResolvers";
@@ -25,6 +26,9 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
 		},
 
 		resolve: buildResolvers(),
+
+		devtool: "inline-source-map",
+		devServer: buildDevServer(options),
 	};
 
 	return config;

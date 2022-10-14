@@ -11,11 +11,13 @@ const paths = {
 export default () => {
 	const mode = "development";
 	const isDev = mode === "development";
+	const port = 3000;
 
 	const config = buildWebpackConfig({
 		mode: mode,
 		paths,
 		isDev,
+		port,
 	});
 
 	return config;
