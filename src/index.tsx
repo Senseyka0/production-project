@@ -1,5 +1,5 @@
 import { render } from "react-dom";
 
-import "./index.scss";
+import { App } from "./app/App";
 
-render(<div>Hello mam?</div>, document.querySelector("#root"));
+render(<App />, document.querySelector("#root"));
