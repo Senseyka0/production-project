@@ -1,17 +1,17 @@
 import path from "path";
 
-import { buildWebpackConfig } from "./config/build";
+import { buildWebpackConfig, BuildEnv } from "./config/build";
 
-const paths = {
-	html: path.resolve(__dirname, "public", "index.html"),
-	entry: path.resolve(__dirname, "src", "index.ts"),
-	build: path.resolve(__dirname, "dist"),
-};
-
-export default () => {
-	const mode = "development";
+export default (env: BuildEnv) => {
+	const mode = env.mode || "development";
 	const isDev = mode === "development";
-	const port = 3000;
+	const port = env.port || 3000;
+
+	const paths = {
+		html: path.resolve(__dirname, "public", "index.html"),
+		entry: path.resolve(__dirname, "src", "index.ts"),
+		build: path.resolve(__dirname, "dist"),
+	};
 
 	const config = buildWebpackConfig({
 		mode: mode,

@@ -6,10 +6,10 @@ import { BuildOptions } from "./types/config";
 export const buildDevServer = ({ port }: BuildOptions): DevServerConfiguration => {
 	return {
 		port,
-		// historyApiFallback: true,
-		// hot: true,
-		// onAfterSetupMiddleware: () => {
-		// 	openBrowser(`http://localhost:${port}`);
-		// },
+		historyApiFallback: true,
+		hot: true,
+		onAfterSetupMiddleware: () => {
+			openBrowser(`http://localhost:${port}`);
+		},
 	};
 };
