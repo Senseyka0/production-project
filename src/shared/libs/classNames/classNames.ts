@@ -10,5 +10,3 @@ export const classNames = (className: string, mods?: Mods, additional?: string[]
 		...additional,
 	].join(" ");
 };
-
-console.log(classNames("hello", { world: true }, ["worldss"]));

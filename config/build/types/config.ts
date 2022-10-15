@@ -4,6 +4,7 @@ export interface BuildOptions {
 		html: string;
 		entry: string;
 		build: string;
+		src: string;
 	};
 	isDev: boolean;
 	port: number;

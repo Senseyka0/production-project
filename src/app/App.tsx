@@ -5,7 +5,8 @@ export const App = () => {
 
 	return (
 		<div>
-			<button onClick={toggleTheme}>Clock</button>App
+			<button onClick={toggleTheme}>Clock</button>
+			App
 		</div>
 	);
 };
