@@ -1,3 +1,4 @@
+import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/theme";
 
 export const App = () => {
@@ -6,7 +7,8 @@ export const App = () => {
 	return (
 		<div>
 			<button onClick={toggleTheme}>Clock</button>
-			App
+
+			<AppRouter />
 		</div>
 	);
 };
