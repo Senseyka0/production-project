@@ -1,0 +1,51 @@
+:root {
+	/* Fonts */
+	--font-family: "Roboto", sans-serif;
+
+	--font-size-m: 16px;
+	--font-line-m: 24px;
+	--font-m: var(--font-size-m) / var(--font-line-m) var(--font-family);
+
+	--font-size-l: 24px;
+	--font-line-l: 32px;
+	--font-l: var(--font-size-l) / var(--font-line-l) var(--font-family);
+
+	/*  Black & White */
+	--white: #ffffff;
+	--black: #000000;
+
+	/*  Gray */
+	--gray50: #f7fafc;
+	--gray200: #e2e8f0;
+	--gray400: #a0aec0;
+	--gray500: #718096;
+	--gray800: #1a202c;
+
+	/* Red */
+	--red700: #9b2c2c;
+
+	/* Orange */
+	--orange700: #9c4221;
+
+	/* Yellow */
+	--yellow700: #975a16;
+
+	/* Green */
+	--green700: #276749;
+
+	/* Teal */
+	--teal700: #285e61;
+
+	/* Blue */
+	--blue700: #2c5282;
+	--blue900: #1f2733;
+
+	/* Cyan */
+	--cyan700: #0987a0;
+
+	/* Purple */
+	--purple700: #553c9a;
+
+	/* Pink */
+	--pink700: #97266d;
+}

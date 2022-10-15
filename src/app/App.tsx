@@ -1,3 +1,11 @@
+import { useTheme } from "./providers/theme";
+
 export const App = () => {
-	return <div>App</div>;
+	const { toggleTheme } = useTheme();
+
+	return (
+		<div>
+			<button onClick={toggleTheme}>Clock</button>App
+		</div>
+	);
 };

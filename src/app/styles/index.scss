@@ -1,0 +1,12 @@
+@import url(./imports.scss);
+
+body {
+	font: var(--font-m);
+
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+}
+
+.app {
+	min-height: 100vh;
+}
