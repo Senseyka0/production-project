@@ -1,0 +1,9 @@
+.wrapper {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	& > svg {
+		transition: var(--base-transition);
+	}
+}
