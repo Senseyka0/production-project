@@ -3,23 +3,18 @@ import { RouteProps } from "react-router-dom";
 import { HomePage } from "pages/HomePage";
 import { AboutPage } from "pages/AboutPage";
 
-export enum AppRoutes {
-	HOME = "home",
-	ABOUT = "about",
+export enum Routes {
+	HOME = "/",
+	ABOUT = "/about",
 }
 
-export const RoutesPath: Record<AppRoutes, string> = {
-	[AppRoutes.HOME]: "/",
-	[AppRoutes.ABOUT]: "/about",
-};
-
-export const routeConfig: Record<AppRoutes, RouteProps> = {
-	[AppRoutes.HOME]: {
-		path: RoutesPath[AppRoutes.HOME],
+export const routeConfig: Record<Routes, RouteProps> = {
+	[Routes.HOME]: {
+		path: Routes.HOME,
 		element: <HomePage />,
 	},
-	[AppRoutes.ABOUT]: {
-		path: RoutesPath[AppRoutes.ABOUT],
+	[Routes.ABOUT]: {
+		path: Routes.ABOUT,
 		element: <AboutPage />,
 	},
 };
