@@ -12,12 +12,18 @@
 	transition: var(--base-transition);
 }
 
-.collapsed {
-	width: var(--sidebar-width-collapsed);
-}
-
 .switchers {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 20px;
+}
+
+.collapsed {
+	width: var(--sidebar-width-collapsed);
+
+	.switchers {
+		gap: 10px;
+		flex-direction: column;
+	}
 }

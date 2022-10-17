@@ -4,6 +4,18 @@
 	color: var(--primary-color);
 }
 
+.icon {
+	border-radius: 50%;
+	transition: var(--base-transition);
+
+	&:hover {
+		background-color: var(--hover);
+	}
+	&:active {
+		background-color: var(--active);
+	}
+}
+
 .primary {
 	color: red;
 }

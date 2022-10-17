@@ -13,7 +13,7 @@ export const ThemeSwitcher = ({ className }: Props) => {
 		<Button
 			className={classNames(cls.wrapper, {}, [className])}
 			onClick={toggleTheme}
-			theme={ButtonTheme.TEXT}>
+			theme={ButtonTheme.ICON}>
 			{theme === Theme.DARK ? (
 				<Sun width={30} fill="var(--primary-color)" />
 			) : (

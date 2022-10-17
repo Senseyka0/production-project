@@ -27,4 +27,5 @@ export enum ButtonTheme {
 	PRIMARY = "primary",
 	SECONDARY = "secondary",
 	TEXT = "text",
+	ICON = "icon",
 }
