@@ -1,4 +1,5 @@
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 
 import { AppRouter } from "./providers/router";
 
@@ -7,7 +8,11 @@ export const App = () => {
 		<>
 			<Navbar />
 
-			<AppRouter />
+			<div className="content">
+				<Sidebar />
+
+				<AppRouter />
+			</div>
 		</>
 	);
 };

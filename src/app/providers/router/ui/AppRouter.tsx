@@ -4,10 +4,12 @@ import { routeConfig } from "../lib/route";
 
 export const AppRouter = () => {
 	return (
-		<Routes>
-			{Object.values(routeConfig).map((props) => (
-				<Route key={props.path} {...props} />
-			))}
-		</Routes>
+		<div className="page">
+			<Routes>
+				{Object.values(routeConfig).map((props) => (
+					<Route key={props.path} element={props.element} {...props} />
+				))}
+			</Routes>
+		</div>
 	);
 };
