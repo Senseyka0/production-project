@@ -16,7 +16,7 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 		}),
-		isDev && new ReactRefreshWebpackPlugin(),
-		isDev && new webpack.HotModuleReplacementPlugin(),
+		// isDev && new ReactRefreshWebpackPlugin(),
+		// isDev && new webpack.HotModuleReplacementPlugin(),
 	];
 };

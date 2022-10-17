@@ -4,7 +4,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
-	const tsLoader = {
+	const typescriptLoader = {
 		test: /\.tsx?$/,
 		use: "ts-loader",
 		exclude: /node_modules/,
@@ -24,6 +24,17 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
 		],
 	};
 
+	const babelLoader = {
+		test: /\.(js|jsx|tsx)$/,
+		exclude: /(node_modules)/,
+		use: {
+			loader: "babel-loader",
+			options: {
+				presets: ["@babel/preset-env"],
+			},
+		},
+	};
+
 	const cssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -41,5 +52,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
 		],
 	};
 
-	return [fileLoader, svgLoader, tsLoader, cssLoader];
+	return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 };
