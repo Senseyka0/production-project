@@ -1,8 +1,8 @@
-@import url(./reset.scss);
+@import "./reset";
 
-@import url(./fonts.scss);
+@import "./fonts";
 
-@import url(./variables/global.scss);
+@import "./variables/global";
 
-@import url(./themes/dark.scss);
-@import url(./themes/light.scss);
+@import "./themes/dark";
+@import "./themes/light";

@@ -4,7 +4,7 @@ import { Language } from "shared/assets/icons";
 import { classNames } from "shared/libs/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
 
-import cls from "./LanguageSwitcher.module.scss";
+// import cls from "./LanguageSwitcher.module.scss";
 
 export const LanguageSwitcher = ({ className }: Props) => {
 	const { i18n } = useTranslation();
@@ -15,7 +15,7 @@ export const LanguageSwitcher = ({ className }: Props) => {
 
 	return (
 		<Button
-			className={classNames(cls.wrapper, {}, [className])}
+			className={classNames("cls.wrapper", {}, [className])}
 			onClick={toggleLanguage}
 			theme={ButtonTheme.ICON}>
 			<Language width={30} fill="var(--primary-color)" />

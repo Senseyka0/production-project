@@ -1,17 +1,16 @@
 .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
 	width: 100%;
 	height: var(--navbar-height);
 	padding: 20px;
-
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 
 	background: var(--secondary-bg-color);
 }
 
 .links {
-	gap: 20px;
-
 	display: flex;
+	gap: 20px;
 }
