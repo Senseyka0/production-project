@@ -11,6 +11,5 @@ export const classNames = (
 		...Object.entries(mods)
 			.filter(([_, value]) => Boolean(value))
 			.map(([key, _]) => key),
-		,
 	].join(" ");
 };
