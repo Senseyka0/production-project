@@ -2,6 +2,7 @@ import { Suspense } from "react";
 
 import { classNames } from "shared/libs/classNames";
 import { Navbar } from "widgets/Navbar";
+import { PageLoader } from "widgets/PageLoader";
 import { Sidebar } from "widgets/Sidebar";
 
 import { AppRouter } from "./providers/router";
@@ -9,7 +10,7 @@ import { AppRouter } from "./providers/router";
 export const App = () => {
 	return (
 		<div className={classNames("app")}>
-			<Suspense fallback="loading">
+			<Suspense fallback={<PageLoader />}>
 				<Navbar />
 
 				<div className="content">

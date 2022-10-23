@@ -1,7 +1,23 @@
 .wrapper {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+
 	padding: 10px;
 
+	font-size: 16px;
 	color: var(--primary-color);
+
+	border-radius: 10px;
+
+	transition: var(--base-transition);
+}
+
+.button-icon {
+	& > svg {
+		width: 12px;
+		height: 12px;
+	}
 }
 
 .icon {
@@ -19,7 +35,18 @@
 }
 
 .primary {
-	color: red;
+	border: 1px solid var(--primary-color);
+
+	&:hover {
+		color: var(--hover);
+
+		background-color: var(--primary-color);
+		border: 1px solid var(--hover);
+
+		.button-icon > svg {
+			fill: var(--hover);
+		}
+	}
 }
 
 .secondary {
