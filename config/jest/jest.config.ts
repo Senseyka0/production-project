@@ -1,3 +1,5 @@
+import path from "path";
+
 export default {
 	// Automatically clear mock calls, instances, contexts and results before every test
 	clearMocks: true,
@@ -8,16 +10,25 @@ export default {
 	coveragePathIgnorePatterns: ["/node_modules/"],
 
 	// An array of regexp pattern strings used to skip coverage collection
-	moduleDirectories: ["node_modules"],
+	moduleDirectories: ["node_modules", "src"],
 
 	// An array of file extensions your modules use
 	moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
 
 	// The root directory that Jest should scan for tests and modules within
-	rootDir: "../../src",
+	rootDir: "../../",
 
 	// The glob patterns Jest uses to detect test files
 	testMatch: ["<rootDir>**/*(*.)@(spec|test).[tj]s?(x)"],
+
+	// A list of paths to modules that run some code to configure or set up the testing framework before each test
+	setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+
+	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+	moduleNameMapper: {
+		"\\.s?css$": "identity-obj-proxy",
+		"\\.svg": path.resolve(__dirname, "JestEmptyComponent.tsx"),
+	},
 
 	// A list of paths to directories that Jest should use to search for files in
 	// roots: ["<rootDir>"],
@@ -82,9 +93,6 @@ export default {
 
 	// An array of directory names to be searched recursively up from the requiring module's location
 
-	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
-
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
 
@@ -120,9 +128,6 @@ export default {
 
 	// The paths to modules that run some code to configure or set up the testing environment before each test
 	// setupFiles: [],
-
-	// A list of paths to modules that run some code to configure or set up the testing framework before each test
-	// setupFilesAfterEnv: [],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,

@@ -9,7 +9,7 @@ import { Button, ButtonTheme } from "shared/ui/Button";
 export const LanguageSwitcher = ({ className }: Props) => {
 	const { i18n } = useTranslation();
 
-	const toggleLanguage = () => {
+	const toggleLanguage = async () => {
 		i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
 	};
 
