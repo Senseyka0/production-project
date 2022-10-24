@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { Arrow, NotFound } from "shared/assets/icons";
+import { Routes } from "app/providers/router";
+import { Arrow, Error } from "shared/assets/icons";
 import { classNames } from "shared/libs/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
-import { Routes } from "app/providers/router";
 
-import cls from "./NotFoundPage.module.scss";
+import cls from "./PageError.module.scss";
 
-export const NotFoundPage = ({ className }: Props) => {
+export const PageError = ({ className }: Props) => {
 	const { t } = useTranslation();
 	const navigate = useNavigate();
 
@@ -18,9 +18,9 @@ export const NotFoundPage = ({ className }: Props) => {
 
 	return (
 		<div className={classNames(cls.wrapper, {}, [className])}>
-			<NotFound width={200} />
+			<Error width={200} />
 
-			<p>{t("The page is not found")}</p>
+			<p>{t("Something wrong :c")}</p>
 
 			<Button
 				onClick={goHomePage}

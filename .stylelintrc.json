@@ -9,8 +9,6 @@
 		"color-hex-length": "long",
 
 		"declaration-block-trailing-semicolon": "always",
-		"selector-combinator-space-before": "always",
-		"selector-combinator-space-after": "always",
 
 		"order/order": ["custom-properties", "declarations"]
 	}

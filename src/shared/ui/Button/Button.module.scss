@@ -14,7 +14,7 @@
 }
 
 .button-icon {
-	& > svg {
+	&>svg {
 		width: 12px;
 		height: 12px;
 	}
@@ -43,7 +43,7 @@
 		background-color: var(--primary-color);
 		border: 1px solid var(--hover);
 
-		.button-icon > svg {
+		.button-icon>svg {
 			fill: var(--hover);
 		}
 	}
