@@ -1,7 +1,7 @@
 import { useTheme } from "app/providers/theme";
 import { Theme } from "app/providers/theme/lib/ThemeContext";
 import { Moon, Sun } from "shared/assets/icons";
-import { classNames } from "shared/libs/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
 
 import cls from "./ThemeSwitcher.module.scss";

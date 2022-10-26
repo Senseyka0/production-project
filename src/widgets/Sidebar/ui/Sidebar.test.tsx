@@ -19,6 +19,7 @@ describe("Sidebar", () => {
 		expect(toggleButton).toBeInTheDocument();
 
 		fireEvent.click(toggleButton);
-		expect(toggleButton).toHaveClass("collapsed");
+
+		expect(screen.getByTestId("sidebar")).toHaveClass("collapsed");
 	});
 });

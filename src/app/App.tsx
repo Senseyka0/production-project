@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { classNames } from "shared/libs/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Navbar } from "widgets/Navbar";
 import { PageLoader } from "widgets/PageLoader";
 import { Sidebar } from "widgets/Sidebar";

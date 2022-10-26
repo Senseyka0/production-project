@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { Arrow, NotFound } from "shared/assets/icons";
-import { classNames } from "shared/libs/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Routes } from "app/providers/router";
 

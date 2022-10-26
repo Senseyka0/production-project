@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Routes } from "app/providers/router";
 import { Arrow, Error } from "shared/assets/icons";
-import { classNames } from "shared/libs/classNames";
+import { classNames } from "shared/lib/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
 
 import cls from "./PageError.module.scss";

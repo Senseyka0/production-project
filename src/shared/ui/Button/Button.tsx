@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { classNames } from "shared/libs/classNames";
+import { classNames } from "shared/lib/classNames";
 
 import cls from "./Button.module.scss";
 
