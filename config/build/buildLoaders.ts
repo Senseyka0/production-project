@@ -1,18 +1,13 @@
 import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 import { BuildOptions } from "./types/config";
+import { buildSvgLoaders, buildCssLoaders } from "./loaders";
 
 export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
 	const typescriptLoader = {
 		test: /\.tsx?$/,
 		use: "ts-loader",
 		exclude: /node_modules/,
-	};
-
-	const svgLoader = {
-		test: /\.svg$/,
-		use: ["@svgr/webpack"],
 	};
 
 	const fileLoader = {
@@ -24,6 +19,10 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
 		],
 	};
 
+	const svgLoader = buildSvgLoaders();
+
+	const cssLoader = buildCssLoaders(isDev);
+
 	const babelLoader = {
 		test: /\.(js|jsx|tsx)$/,
 		exclude: /(node_modules)/,
@@ -33,24 +32,6 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
 				presets: ["@babel/preset-env"],
 			},
 		},
-	};
-
-	const cssLoader = {
-		test: /\.s[ac]ss$/i,
-		use: [
-			isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-			{
-				loader: "css-loader",
-				options: {
-					modules: {
-						auto: (resPath: string) => resPath.includes(".module."),
-						localIdentName: isDev ? "[local]__[hash:base64:8]" : "[hash:base64:8]",
-						exportLocalsConvention: "camelCase",
-					},
-				},
-			},
-			"sass-loader",
-		],
 	};
 
 	return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];

@@ -47,7 +47,8 @@
         "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
         // allow write "_" in params of function
         "no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
-        "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }]
+        "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
+        "react/display-name": "off"
     }
 }
 

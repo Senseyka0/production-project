@@ -25,7 +25,8 @@ export const NotFoundPage = ({ className }: Props) => {
 			<Button
 				onClick={goHomePage}
 				theme={ButtonTheme.PRIMARY}
-				leftIcon={<Arrow className={cls["button-icon"]} fill="var(--primary-color)" />}>
+				leftIcon={<Arrow className={cls["button-icon"]} fill="var(--primary-color)" />}
+			>
 				{t("Return to Home page")}
 			</Button>
 		</div>

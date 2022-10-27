@@ -1,13 +1,15 @@
 export interface BuildOptions {
 	mode?: BuildMode;
-	paths: {
-		html: string;
-		entry: string;
-		build: string;
-		src: string;
-	};
+	paths: BuildPaths;
 	isDev: boolean;
 	port: number;
+}
+
+export interface BuildPaths {
+	html: string;
+	entry: string;
+	build: string;
+	src: string;
 }
 
 export interface BuildEnv {
