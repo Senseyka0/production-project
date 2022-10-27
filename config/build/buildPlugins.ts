@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] => {
-	return [
+	const plugins = [
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({ template: paths.html }),
 		new MiniCssExtractPlugin({
@@ -16,7 +16,8 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 		new webpack.DefinePlugin({
 			IS_DEV: JSON.stringify(isDev),
 		}),
-		// isDev && new ReactRefreshWebpackPlugin(),
-		// isDev && new webpack.HotModuleReplacementPlugin(),
 	];
+	// isDev && new ReactRefreshWebpackPlugin(),
+	// isDev && new webpack.HotModuleReplacementPlugin(),]
+	return plugins.filter(Boolean);
 };
