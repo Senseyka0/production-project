@@ -4,6 +4,7 @@
         "es2021": true,
         "jest": true
     },
+    "plugins": ["react", "@typescript-eslint", "react-hooks"],
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -11,14 +12,11 @@
         "prettier"
     ],
     "settings": {
-        "react": {
-            "version": "detect"
-        }
+        "react": {"version": "detect"}
     },
     "overrides": [],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {"ecmaVersion": "latest", "sourceType": "module"},
-    "plugins": ["react", "@typescript-eslint"],
     "rules": {
         "indent": ["error", "tab"],
         "linebreak-style": ["error", "unix"],
@@ -29,7 +27,9 @@
         // allow write "_" in params of function
         "no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
         "@typescript-eslint/no-unused-vars": ["off", { "argsIgnorePattern": "^_" }],
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }
 

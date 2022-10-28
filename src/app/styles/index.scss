@@ -6,7 +6,7 @@ body {
 
 	background-color: var(--bg-color);
 
-	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	transition: color var(--base-transition), background-color var(--base-transition);
 }
 
 .app {

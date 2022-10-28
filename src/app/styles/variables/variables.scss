@@ -20,6 +20,9 @@
 	--white: #ffffff;
 	--black: #000000;
 
+	/* Overlay */
+	--overlay-color: rgba(0 0 0 / 50%);
+
 	/*  Gray */
 	--gray50: #f7fafc;
 	--gray100: #edf2f7;
@@ -57,4 +60,8 @@
 
 	/* Pink */
 	--pink700: #97266d;
+
+
+	/* Z-index */
+	--modal-z-index: 10;
 }

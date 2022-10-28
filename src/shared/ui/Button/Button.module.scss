@@ -54,5 +54,11 @@
 }
 
 .text {
-	display: flex;
+	&:hover {
+		color: var(--hover);
+	}
+
+	&:active {
+		color: var(--active);
+	}
 }
