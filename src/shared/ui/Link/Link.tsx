@@ -5,9 +5,9 @@ import { classNames } from "shared/lib/classNames";
 
 import cls from "./Link.module.scss";
 
-export const Link = ({ className, children, ...otherProps }: Props) => {
+export const Link = ({ className, children, theme = LinkTheme.PRIMARY, ...otherProps }: Props) => {
 	return (
-		<RouterLink className={classNames(cls.wrapper, {}, [className])} {...otherProps}>
+		<RouterLink className={classNames(cls.wrapper, {}, [className, cls[theme]])} {...otherProps}>
 			{children}
 		</RouterLink>
 	);
@@ -16,4 +16,9 @@ export const Link = ({ className, children, ...otherProps }: Props) => {
 interface Props extends LinkProps {
 	className?: string;
 	children: ReactNode;
+	theme?: LinkTheme;
+}
+
+export enum LinkTheme {
+	PRIMARY = "primary",
 }

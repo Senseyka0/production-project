@@ -9,15 +9,7 @@ import cls from "./Navbar.module.scss";
 export const Navbar = ({ className }: Props) => {
 	const { t } = useTranslation();
 
-	return (
-		<div className={classNames(cls.wrapper, {}, [className])}>
-			<div className={cls.links}>
-				<Link to={Routes.HOME}>{t("Home")}</Link>
-
-				<Link to={Routes.ABOUT}>{t("About")}</Link>
-			</div>
-		</div>
-	);
+	return <div className={classNames(cls.wrapper, {}, [className])}></div>;
 };
 
 interface Props {
