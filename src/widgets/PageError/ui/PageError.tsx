@@ -20,12 +20,13 @@ export const PageError = ({ className }: Props) => {
 		<div className={classNames(cls.wrapper, {}, [className])}>
 			<Error width={200} />
 
-			<p>{t("Something wrong :c")}</p>
+			<p>{t("Something wrong 😕")}</p>
 
 			<Button
 				onClick={goHomePage}
 				theme={ButtonTheme.PRIMARY}
-				leftIcon={<Arrow className={cls["button-icon"]} fill="var(--primary-color)" />}>
+				leftIcon={<Arrow className={cls["button-icon"]} fill="var(--primary-color)" />}
+			>
 				{t("Return to Home page")}
 			</Button>
 		</div>
