@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { lazy, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 import { classNames } from "shared/lib/classNames";
 import { Portal } from "shared/ui/Portal";
@@ -7,8 +7,9 @@ import cls from "./Modal.module.scss";
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = ({ className, children, isOpen, onClose }: Props) => {
+export const Modal = ({ className, children, isOpen, onClose, isLazy = false }: Props) => {
 	const [isClosing, setIsClosing] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
 
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -45,6 +46,16 @@ export const Modal = ({ className, children, isOpen, onClose }: Props) => {
 		};
 	}, [isOpen, onKeyDown]);
 
+	useEffect(() => {
+		if (isOpen) {
+			setIsMounted(true);
+		}
+	}, [isOpen]);
+
+	if (lazy && !isMounted) {
+		return null;
+	}
+
 	return (
 		<Portal>
 			<div
@@ -68,4 +79,5 @@ interface Props {
 	children: ReactNode;
 	isOpen: boolean;
 	onClose: () => void;
+	isLazy?: boolean;
 }
