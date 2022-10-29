@@ -15,4 +15,7 @@ const Template: ComponentStory<typeof Input> = (args) => {
 };
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+	placeholder: "Hello world",
+	label: "Hello world",
+};
