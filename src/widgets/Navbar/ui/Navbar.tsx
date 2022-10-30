@@ -23,7 +23,7 @@ export const Navbar = ({ className }: Props) => {
 	return (
 		<div className={classNames(cls.wrapper, {}, [className])}>
 			<div className={cls.links}>
-				<Button theme={ButtonTheme.TEXT} className={cls.links} onClick={onOpenAuthModal}>
+				<Button theme={ButtonTheme.TEXT} onClick={onOpenAuthModal}>
 					{t("Log In")}
 				</Button>
 			</div>

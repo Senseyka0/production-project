@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames";
@@ -9,20 +10,22 @@ import cls from "./LoginForm.module.scss";
 export const LoginForm = ({ className }: Props) => {
 	const { t } = useTranslation();
 
+	const [value, setValue] = useState("");
+
 	return (
 		<div className={classNames(cls.wrapper, {}, [className])}>
 			<Input
 				type="text"
-				value=""
-				onChange={() => console.log}
+				value={value}
+				onChange={setValue}
 				className={cls.input}
 				label={t("Username")}
 				placeholder={t("Username")}
 			/>
 			<Input
 				type="text"
-				value=""
-				onChange={() => console.log}
+				value={value}
+				onChange={setValue}
 				className={cls.input}
 				label={t("Password")}
 				placeholder={t("Password")}

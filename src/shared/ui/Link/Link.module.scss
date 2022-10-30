@@ -1,6 +1,32 @@
 .wrapper {
 	color: var(--primary-color);
 	text-decoration: none;
+
+	transition: var(--base-transition);
+
+	&:hover {
+		color: var(--main-color-hover);
+
+		&>svg {
+			fill: var(--main-color-hover);
+		}
+	}
+
+	&:active {
+		color: var(--main-color-active);
+
+		&>svg {
+			fill: var(--main-color-active);
+		}
+	}
+
+	&.active {
+		color: var(--main-color-active);
+
+		&>svg {
+			fill: var(--main-color-active);
+		}
+	}
 }
 
 .primary {

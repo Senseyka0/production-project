@@ -22,11 +22,11 @@ export const Input = memo((props: Props) => {
 	};
 
 	return (
-		<label className={classNames(cls.wrapper, {}, [className])}>
+		<div className={classNames(cls.wrapper, {}, [className])}>
 			{label && <p className={cls.label}>{label}</p>}
 
 			<input className={cls.input} value={value} onChange={handleChange} {...otherProps} />
-		</label>
+		</div>
 	);
 });
 

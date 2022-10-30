@@ -27,15 +27,31 @@ export const Sidebar = ({ className }: Props) => {
 		>
 			<div className={cls.links}>
 				<Link className={cls.link} to={Routes.HOME}>
-					<Home fill="var(--primary-color)" width={20} />
+					{isCollapsed ? (
+						<Button theme={ButtonTheme.ICON}>
+							<Home fill="var(--primary-color)" width={22} />
+						</Button>
+					) : (
+						<>
+							<Home fill="var(--primary-color)" width={22} />
 
-					{!isCollapsed && t("Home")}
+							{t("Home")}
+						</>
+					)}
 				</Link>
 
 				<Link className={cls.link} to={Routes.ABOUT}>
-					<AboutUs fill="var(--primary-color)" width={20} />
+					{isCollapsed ? (
+						<Button theme={ButtonTheme.ICON}>
+							<AboutUs fill="var(--primary-color)" width={22} />
+						</Button>
+					) : (
+						<>
+							<AboutUs fill="var(--primary-color)" width={22} />
 
-					{!isCollapsed && t("About")}
+							{t("About")}
+						</>
+					)}
 				</Link>
 			</div>
 

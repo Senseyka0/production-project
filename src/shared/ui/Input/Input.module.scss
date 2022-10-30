@@ -12,6 +12,16 @@
 
 	font-size: 16px;
 
-	border: 1px solid var(--primary-color);
+	border: 2px solid var(--main-color);
 	border-radius: 10px;
+
+	transition: var(--base-transition);
+
+	&:hover {
+		border: 2px solid var(--main-color-hover);
+	}
+
+	&:focus {
+		border: 2px solid var(--main-color-active);
+	}
 }

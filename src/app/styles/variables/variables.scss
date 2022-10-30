@@ -13,12 +13,17 @@
 
 	/* Sizes */
 	--navbar-height: 50px;
-	--sidebar-width: 260px;
+	--sidebar-width: 220px;
 	--sidebar-width-collapsed: 80px;
 
 	/*  Black & White */
 	--white: #ffffff;
 	--black: #000000;
+
+	/*  Main colors */
+	--main-color: var(--teal300);
+	--main-color-hover: var(--teal400);
+	--main-color-active: var(--teal500);
 
 	/* Overlay */
 	--overlay-color: rgba(0 0 0 / 50%);
@@ -46,6 +51,9 @@
 	--green700: #276749;
 
 	/* Teal */
+	--teal300: #4FD1C5;
+	--teal400: #31B2AC;
+	--teal500: #319795;
 	--teal700: #285e61;
 
 	/* Blue */

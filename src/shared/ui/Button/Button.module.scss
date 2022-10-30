@@ -26,25 +26,43 @@
 	transition: var(--base-transition);
 
 	&:hover {
-		background-color: var(--hover);
+		background-color: var(--main-color-hover);
+
+		&>svg {
+			fill: white;
+		}
 	}
 
 	&:active {
-		background-color: var(--active);
+		background-color: var(--main-color-active);
+
+		&>svg {
+			fill: white;
+		}
 	}
 }
 
 .primary {
-	border: 1px solid var(--primary-color);
+	color: var(--white);
+
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
 
 	&:hover {
-		color: var(--bg-color);
-
-		background-color: var(--hover);
-		border: 1px solid var(--primary-color);
+		background-color: var(--main-color-hover);
+		border: 1px solid var(--main-color-hover);
 
 		.button-icon>svg {
-			fill: var(--hover);
+			fill: var(--main-color-hover);
+		}
+	}
+
+	&:active {
+		background-color: var(--main-color-active);
+		border: 1px solid var(--main-color-active);
+
+		.button-icon>svg {
+			fill: var(--main-color-active);
 		}
 	}
 }
@@ -55,10 +73,10 @@
 
 .text {
 	&:hover {
-		color: var(--hover);
+		color: var(--main-color-hover);
 	}
 
 	&:active {
-		color: var(--active);
+		color: var(--main-color-active);
 	}
 }
