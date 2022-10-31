@@ -18,3 +18,11 @@ Standard.decorators = [
 		login: { username: "Hello world", password: "1234" },
 	}),
 ];
+
+export const Auth = Template.bind({});
+Auth.args = {};
+Auth.decorators = [
+	StoreDecorator({
+		user: { isAuth: true, authData: { username: "Hello world", id: "1" } },
+	}),
+];
