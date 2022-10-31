@@ -7,5 +7,6 @@ import Arrow from "./arrow.svg";
 import Error from "./error.svg";
 import AboutUs from "./about-us.svg";
 import Home from "./home.svg";
+import Logout from "./logout.svg";
 
-export { Person, Language, Moon, Sun, NotFound, Arrow, Error, AboutUs, Home };
+export { Person, Language, Moon, Sun, NotFound, Arrow, Error, AboutUs, Home, Logout };

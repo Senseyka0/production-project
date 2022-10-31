@@ -16,6 +16,9 @@
 	--sidebar-width: 220px;
 	--sidebar-width-collapsed: 80px;
 
+	/* Z-index */
+	--modal-z-index: 10;
+
 	/*  Black & White */
 	--white: #ffffff;
 	--black: #000000;
@@ -24,6 +27,7 @@
 	--main-color: var(--teal300);
 	--main-color-hover: var(--teal400);
 	--main-color-active: var(--teal500);
+	--error: var(--red500);
 
 	/* Overlay */
 	--overlay-color: rgba(0 0 0 / 50%);
@@ -39,6 +43,8 @@
 	--gray800: #1a202c;
 
 	/* Red */
+	--red500: #E53E3E;
+	--red600: #C53030;
 	--red700: #9b2c2c;
 
 	/* Orange */
@@ -68,8 +74,4 @@
 
 	/* Pink */
 	--pink700: #97266d;
-
-
-	/* Z-index */
-	--modal-z-index: 10;
 }

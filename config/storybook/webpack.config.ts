@@ -32,5 +32,7 @@ export default ({ config }: Props) => {
 	config.module?.rules?.push(buildSvgLoaders());
 	config.module?.rules?.push(buildCssLoaders(true));
 
+	config.plugins?.push(new webpack.DefinePlugin({ IS_DEV: true }));
+
 	return config;
 };

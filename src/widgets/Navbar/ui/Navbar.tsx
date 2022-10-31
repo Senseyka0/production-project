@@ -1,14 +1,21 @@
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 
+import { getUserAuthData, getUserIsAuth, userActions } from "entities/user";
+import { LoginModal } from "features/authByUsername";
 import { classNames } from "shared/lib/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
-import { LoginModal } from "features/authByUsername";
+import { Logout } from "shared/assets/icons";
 
 import cls from "./Navbar.module.scss";
 
 export const Navbar = ({ className }: Props) => {
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
+
+	const isAuth = useSelector(getUserIsAuth);
+	const authData = useSelector(getUserAuthData);
 
 	const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
@@ -20,17 +27,35 @@ export const Navbar = ({ className }: Props) => {
 		setIsOpenAuthModal(false);
 	}, []);
 
-	return (
-		<div className={classNames(cls.wrapper, {}, [className])}>
-			<div className={cls.links}>
-				<Button theme={ButtonTheme.TEXT} onClick={onOpenAuthModal}>
-					{t("Log In")}
-				</Button>
-			</div>
+	const onLogout = () => {
+		dispatch(userActions.logOut());
+	};
 
-			<LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-		</div>
-	);
+	if (isAuth) {
+		return (
+			<div className={classNames(cls.wrapper, {}, [className])}>
+				<div className={cls.links}>
+					<p>{authData.username}</p>
+
+					<Button theme={ButtonTheme.ICON} onClick={onLogout}>
+						<Logout fill="var(--primary-color)" width={20} />
+					</Button>
+				</div>
+			</div>
+		);
+	} else {
+		return (
+			<div className={classNames(cls.wrapper, {}, [className])}>
+				<div className={cls.links}>
+					<Button theme={ButtonTheme.TEXT} onClick={onOpenAuthModal}>
+						{t("Log In")}
+					</Button>
+				</div>
+
+				<LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
+			</div>
+		);
+	}
 };
 
 interface Props {
