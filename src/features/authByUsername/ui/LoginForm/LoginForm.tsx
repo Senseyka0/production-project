@@ -7,18 +7,34 @@ import { classNames } from "shared/lib/classNames";
 import { Button } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
 import { Error } from "shared/ui/Error";
+import { useDynamicModuleLoad, ReducersList } from "shared/lib/hooks/useDynamicModuleLoad";
 
-import { getLoginState } from "../../model/selectors/getLoginState";
-import { loginActions } from "../../model/slice/loginSlice";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import {
+	getLoginUsername,
+	getLoginPassword,
+	getLoginIsLoading,
+	getLoginError,
+} from "../../model/selectors";
 
 import cls from "./LoginForm.module.scss";
+
+const initialReducers: ReducersList = {
+	login: loginReducer,
+};
 
 export const LoginForm = memo(({ className }: Props) => {
 	const { t } = useTranslation();
 
 	const dispatch = useDispatch<AppDispatch>();
-	const { username, password, isLoading, error } = useSelector(getLoginState);
+
+	const username = useSelector(getLoginUsername);
+	const password = useSelector(getLoginPassword);
+	const isLoading = useSelector(getLoginIsLoading);
+	const error = useSelector(getLoginError);
+
+	useDynamicModuleLoad({ reducers: initialReducers, removeAfterUnmount: true });
 
 	const onChangeUsername = useCallback(
 		(login: string) => {
@@ -34,8 +50,8 @@ export const LoginForm = memo(({ className }: Props) => {
 		[dispatch]
 	);
 
-	const onLogin = useCallback(async () => {
-		await dispatch(loginByUsername({ username, password }));
+	const onLogin = useCallback(() => {
+		dispatch(loginByUsername({ username, password }));
 	}, [dispatch, password, username]);
 
 	return (

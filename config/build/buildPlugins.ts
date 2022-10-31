@@ -17,7 +17,16 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 			IS_DEV: JSON.stringify(isDev),
 		}),
 	];
-	// isDev && new ReactRefreshWebpackPlugin(),
-	// isDev && new webpack.HotModuleReplacementPlugin(),]
-	return plugins.filter(Boolean);
+
+	if (isDev) {
+		// 	plugins.push(
+		// 		new BundleAnalyzerPlugin({
+		// 			openAnalyzer: false,
+		// 		})
+		// 	);
+		// 	// isDev && new ReactRefreshWebpackPlugin(),
+		// 	// isDev && new webpack.HotModuleReplacementPlugin(),
+	}
+
+	return plugins;
 };
