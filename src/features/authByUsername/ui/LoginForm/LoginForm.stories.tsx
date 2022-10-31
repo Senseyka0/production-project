@@ -25,7 +25,7 @@ export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
 	StoreDecorator({
-		login: { username: "Misha Rypta", password: "1234", isLoading: true },
+		login: { username: "Hello world", password: "1234", isLoading: true },
 	}),
 ];
 
@@ -33,6 +33,6 @@ export const Error = Template.bind({});
 Error.args = {};
 Error.decorators = [
 	StoreDecorator({
-		login: { username: "Misha Rypta", password: "1234", error: "Failed Auth" },
+		login: { username: "Hello world", password: "1234", error: "Failed Auth" },
 	}),
 ];
