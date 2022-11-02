@@ -1,5 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+import { StoreDecorator } from "shared/config/storybook";
+
 import { ProfilePage } from "./ProfilePage";
 
 export default {
@@ -11,3 +13,8 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...
 
 export const Standard = Template.bind({});
 Standard.args = {};
+Standard.decorators = [
+	StoreDecorator({
+		profile: {},
+	}),
+];
