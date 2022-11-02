@@ -28,7 +28,3 @@ export const createReduxStore = (
 
 	return store;
 };
-
-const Dispatch = createReduxStore().dispatch;
-
-export type AppDispatch = typeof Dispatch;

@@ -1,11 +1,13 @@
-import { ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import { NavLink, LinkProps } from "react-router-dom";
 
 import { classNames } from "shared/lib/classNames";
 
 import cls from "./Link.module.scss";
 
-export const Link = ({ className, children, theme = LinkTheme.PRIMARY, ...otherProps }: Props) => {
+export const Link = memo((props: Props) => {
+	const { className, children, theme = LinkTheme.PRIMARY, ...otherProps } = props;
+
 	return (
 		<NavLink
 			className={({ isActive }) =>
@@ -16,7 +18,7 @@ export const Link = ({ className, children, theme = LinkTheme.PRIMARY, ...otherP
 			{children}
 		</NavLink>
 	);
-};
+});
 
 interface Props extends LinkProps {
 	className?: string;

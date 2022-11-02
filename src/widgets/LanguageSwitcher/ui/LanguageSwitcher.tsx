@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Language } from "shared/assets/icons";
@@ -6,7 +7,7 @@ import { Button, ButtonTheme } from "shared/ui/Button";
 
 // import cls from "./LanguageSwitcher.module.scss";
 
-export const LanguageSwitcher = ({ className }: Props) => {
+export const LanguageSwitcher = memo(({ className }: Props) => {
 	const { i18n } = useTranslation();
 
 	const toggleLanguage = async () => {
@@ -17,11 +18,12 @@ export const LanguageSwitcher = ({ className }: Props) => {
 		<Button
 			className={classNames("cls.wrapper", {}, [className])}
 			onClick={toggleLanguage}
-			theme={ButtonTheme.ICON}>
+			theme={ButtonTheme.ICON}
+		>
 			<Language width={30} fill="var(--primary-color)" />
 		</Button>
 	);
-};
+});
 
 interface Props {
 	className?: string;

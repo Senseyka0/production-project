@@ -6,14 +6,18 @@ import {
 	ReducersMapObject,
 } from "@reduxjs/toolkit";
 
+import { ProfileSchema } from "entities/profile";
 import { UserSchema } from "entities/user";
 import { LoginSchema } from "features/authByUsername";
+
+import { createReduxStore } from "./store";
 
 export interface StateSchema {
 	user: UserSchema;
 
 	// Async reducers
 	login?: LoginSchema;
+	profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -28,3 +32,5 @@ export interface ReducerManager {
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 	reducerManager: ReducerManager;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

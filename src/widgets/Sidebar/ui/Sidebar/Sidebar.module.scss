@@ -23,23 +23,6 @@
 	padding: 10px;
 }
 
-.link {
-	display: flex;
-	gap: 14px;
-	align-items: center;
-
-	width: 100%;
-	padding: 10px;
-
-	font-size: 20px;
-
-	border-radius: 10px;
-
-	&:hover {
-		background-color: var(--secondary-hover);
-	}
-}
-
 .switchers {
 	display: flex;
 	gap: 20px;
@@ -68,7 +51,6 @@
 
 		transition: var(--base-transition);
 	}
-
 
 	&.collapsed svg {
 		transform: rotate(90deg);

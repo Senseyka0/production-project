@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { useTheme } from "app/providers/theme";
 import { Theme } from "app/providers/theme/lib/ThemeContext";
 import { Moon, Sun } from "shared/assets/icons";
@@ -6,14 +8,15 @@ import { Button, ButtonTheme } from "shared/ui/Button";
 
 import cls from "./ThemeSwitcher.module.scss";
 
-export const ThemeSwitcher = ({ className }: Props) => {
+export const ThemeSwitcher = memo(({ className }: Props) => {
 	const { toggleTheme, theme } = useTheme();
 
 	return (
 		<Button
 			className={classNames(cls.wrapper, {}, [className])}
 			onClick={toggleTheme}
-			theme={ButtonTheme.ICON}>
+			theme={ButtonTheme.ICON}
+		>
 			{theme === Theme.DARK ? (
 				<Sun width={30} fill="var(--primary-color)" />
 			) : (
@@ -21,7 +24,7 @@ export const ThemeSwitcher = ({ className }: Props) => {
 			)}
 		</Button>
 	);
-};
+});
 
 interface Props {
 	className?: string;

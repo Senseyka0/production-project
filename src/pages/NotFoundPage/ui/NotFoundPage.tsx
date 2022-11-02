@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +9,7 @@ import { Routes } from "app/providers/router";
 
 import cls from "./NotFoundPage.module.scss";
 
-export const NotFoundPage = ({ className }: Props) => {
+export const NotFoundPage = memo(({ className }: Props) => {
 	const { t } = useTranslation();
 	const navigate = useNavigate();
 
@@ -31,7 +32,7 @@ export const NotFoundPage = ({ className }: Props) => {
 			</Button>
 		</div>
 	);
-};
+});
 
 interface Props {
 	className?: string;
