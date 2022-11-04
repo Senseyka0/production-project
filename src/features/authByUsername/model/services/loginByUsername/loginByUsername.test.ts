@@ -1,7 +1,4 @@
-import { Dispatch } from "@reduxjs/toolkit";
-
 import { userActions } from "entities/user";
-import { StateSchema } from "app/providers/store";
 import { TestAsyncThunk } from "shared/config/tests";
 
 import { loginByUsername } from "./loginByUsername";
