@@ -1,0 +1,23 @@
+.wrapper {
+	padding: 20px;
+
+	border: 1px solid var(--main-color);
+	border-radius: 10px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.edit {
+	margin-left: auto;
+}
+
+.content {
+	margin-top: 24px;
+}
+
+.input {
+	margin-top: 10px;
+}

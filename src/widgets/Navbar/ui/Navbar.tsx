@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getUserAuthData, getUserIsAuth, userActions } from "entities/user";
+import { getUserUserName, getUserIsAuth, userActions } from "entities/user";
 import { LoginModal } from "features/authByUsername";
 import { classNames } from "shared/lib/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button";
@@ -15,7 +15,7 @@ export const Navbar = memo(({ className }: Props) => {
 	const dispatch = useDispatch();
 
 	const isAuth = useSelector(getUserIsAuth);
-	const authData = useSelector(getUserAuthData);
+	const username = useSelector(getUserUserName);
 
 	const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
@@ -35,7 +35,7 @@ export const Navbar = memo(({ className }: Props) => {
 		return (
 			<div className={classNames(cls.wrapper, {}, [className])}>
 				<div className={cls.links}>
-					<p>{authData.username}</p>
+					<p>{username}</p>
 
 					<Button theme={ButtonTheme.ICON} onClick={onLogout}>
 						<Logout fill="var(--primary-color)" width={20} />

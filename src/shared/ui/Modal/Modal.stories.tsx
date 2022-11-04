@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
-	return <Modal isOpen={true} onClose={() => console.log} {...args} />;
+	return <Modal {...args} isOpen={true} onClose={() => console.log} />;
 };
 
 export const Primary = Template.bind({});

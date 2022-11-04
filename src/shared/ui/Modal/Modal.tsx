@@ -1,4 +1,12 @@
-import { lazy, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import {
+	MouseEvent,
+	MutableRefObject,
+	ReactNode,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 
 import { classNames } from "shared/lib/classNames";
 import { Portal } from "shared/ui/Portal";
@@ -11,7 +19,7 @@ export const Modal = ({ className, children, isOpen, onClose, isLazy = false }: 
 	const [isClosing, setIsClosing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 
-	const timerRef = useRef<ReturnType<typeof setTimeout>>();
+	const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
 	const onCloseModal = useCallback(() => {
 		setIsClosing(true);
@@ -52,7 +60,7 @@ export const Modal = ({ className, children, isOpen, onClose, isLazy = false }: 
 		}
 	}, [isOpen]);
 
-	if (lazy && !isMounted) {
+	if (isLazy && !isMounted) {
 		return null;
 	}
 

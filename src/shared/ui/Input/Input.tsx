@@ -18,7 +18,9 @@ export const Input = memo((props: Props) => {
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 
-		onChange(value);
+		if (onChange) {
+			onChange(value);
+		}
 	};
 
 	return (
@@ -33,8 +35,8 @@ export const Input = memo((props: Props) => {
 interface Props extends HtMLInputProps {
 	className?: string;
 	theme?: InputTheme;
-	value: string;
-	onChange: (value: string) => void;
+	value?: string;
+	onChange?: (value: string) => void;
 	label?: string;
 }
 
