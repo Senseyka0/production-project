@@ -2,6 +2,7 @@
 	display: flex;
 	gap: 10px;
 	align-items: center;
+	justify-content: center;
 
 	padding: 10px;
 
@@ -27,6 +28,7 @@
 
 	&:hover {
 		background-color: var(--main-color-hover);
+		box-shadow: var(--base-shadow);
 
 		&>svg {
 			fill: white;
@@ -43,6 +45,8 @@
 }
 
 .primary {
+	min-width: 100px;
+
 	color: var(--white);
 
 	background-color: var(--main-color);
@@ -51,6 +55,7 @@
 	&:hover {
 		background-color: var(--main-color-hover);
 		border: 1px solid var(--main-color-hover);
+		box-shadow: var(--base-shadow);
 
 		.button-icon>svg {
 			fill: var(--main-color-hover);
@@ -60,6 +65,7 @@
 	&:active {
 		background-color: var(--main-color-active);
 		border: 1px solid var(--main-color-active);
+		box-shadow: var(--base-shadow);
 
 		.button-icon>svg {
 			fill: var(--main-color-active);
@@ -70,7 +76,67 @@
 }
 
 .secondary {
-	color: red;
+	min-width: 100px;
+
+	color: var(--main-color);
+
+	background-color: transparent;
+	border: 1px solid var(--main-color);
+
+	&:hover {
+		color: var(--main-color-hover);
+
+		border: 1px solid var(--main-color-hover);
+		box-shadow: var(--base-shadow);
+
+		.button-icon>svg {
+			fill: var(--main-color-hover);
+		}
+	}
+
+	&:active {
+		color: var(--main-color-active);
+
+		border: 1px solid var(--main-color-active);
+		box-shadow: var(--base-shadow);
+
+		.button-icon>svg {
+			fill: var(--main-color-active);
+		}
+	}
+
+	// &:disabled {}
+}
+
+.error {
+	min-width: 100px;
+
+	color: var(--error);
+
+	background-color: transparent;
+	border: 1px solid var(--error);
+
+
+	&:hover {
+		box-shadow: var(--error) 0 2px 8px 0;
+
+		.button-icon>svg {
+			fill: var(--error);
+		}
+	}
+
+	&:active {
+		color: var(--red600);
+
+		border: 1px solid var(--red600);
+		box-shadow: var(--error) 0 4px 10px 0;
+
+		.button-icon>svg {
+			fill: var(--error);
+		}
+	}
+
+	// &:disabled {}
 }
 
 .text {

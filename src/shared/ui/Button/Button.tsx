@@ -38,4 +38,5 @@ export enum ButtonTheme {
 	SECONDARY = "secondary",
 	TEXT = "text",
 	ICON = "icon",
+	ERROR = "error",
 }

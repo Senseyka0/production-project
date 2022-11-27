@@ -18,9 +18,9 @@ const userSlice = createSlice({
 			state.isAuth = true;
 		},
 		initAuthData: (state) => {
-			const authData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER_KEY) || "");
+			const authData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER_KEY) || "{}");
 
-			if (authData) {
+			if (Object.keys(authData).length !== 0) {
 				state.authData = authData;
 				state.isAuth = true;
 			}

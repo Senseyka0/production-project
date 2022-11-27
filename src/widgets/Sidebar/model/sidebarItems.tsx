@@ -7,6 +7,7 @@ export interface ISidebarLink {
 	path: string;
 	text: string;
 	Icon?: ReactNode;
+	authOnly?: boolean;
 }
 
 export const sidebarLinkList: ISidebarLink[] = [
@@ -24,5 +25,6 @@ export const sidebarLinkList: ISidebarLink[] = [
 		path: Routes.PROFILE,
 		text: "Profile",
 		Icon: <Profile fill="var(--primary-color)" width={22} />,
+		authOnly: true,
 	},
 ];

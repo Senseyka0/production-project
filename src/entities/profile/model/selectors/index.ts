@@ -10,3 +10,4 @@ export { getProfileFirstName } from "./getProfileFirstName/getProfileFirstName";
 export { getProfileIsReadonly } from "./getProfileIsReadonly/getProfileIsReadonly";
 export { getProfileLastName } from "./getProfileLastName/getProfileLastName";
 export { getProfileUserName } from "./getProfileUserName/getProfileUserName";
+export { getProfileForm } from "./getProfileForm/getProfileForm";

@@ -5,15 +5,7 @@ import { classNames } from "shared/lib/classNames";
 import cls from "./Input.module.scss";
 
 export const Input = memo((props: Props) => {
-	const {
-		className,
-		theme = InputTheme.PRIMARY,
-		onChange,
-		value,
-		type = "text",
-		label,
-		...otherProps
-	} = props;
+	const { className, theme = InputTheme.PRIMARY, onChange, value, label, ...otherProps } = props;
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
@@ -32,15 +24,15 @@ export const Input = memo((props: Props) => {
 	);
 });
 
-interface Props extends HtMLInputProps {
+interface Props extends HTMLInputProps {
 	className?: string;
 	theme?: InputTheme;
-	value?: string;
+	value?: string | number;
 	onChange?: (value: string) => void;
 	label?: string;
 }
 
-type HtMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
 
 export enum InputTheme {
 	PRIMARY = "primary",

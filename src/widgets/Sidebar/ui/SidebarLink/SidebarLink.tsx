@@ -1,5 +1,7 @@
+import { getUserIsAuth } from "entities/user";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Link } from "shared/ui/Link";
@@ -10,6 +12,12 @@ import cls from "./SidebarLink.module.scss";
 
 export const SidebarLink = memo(({ link, isCollapsed }: Props) => {
 	const { t } = useTranslation();
+
+	const isAuth = useSelector(getUserIsAuth);
+
+	if (link.authOnly && !isAuth) {
+		return null;
+	}
 
 	return (
 		<Link className={cls.wrapper} to={link.path}>

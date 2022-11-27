@@ -1,4 +1,6 @@
-// .wrapper {}
+.wrapper {
+	width: 100%;
+}
 
 .label {
 	margin-bottom: 8px;
@@ -23,5 +25,22 @@
 
 	&:focus {
 		border: 2px solid var(--main-color-active);
+	}
+
+	&:read-only {
+		opacity: 0.7;
+	}
+
+	// hide arrows in input type number
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		margin: 0;
+
+		appearance: none;
+	}
+
+	/* Firefox */
+	&[type=number] {
+		appearance: textfield;
 	}
 }
