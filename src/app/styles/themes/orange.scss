@@ -1,0 +1,8 @@
+:root[data-theme="orange"],
+.global-orange-theme {
+	--bg-color: var(--orange50);
+	--secondary-bg-color: var(--orange500);
+	--primary-color: var(--white);
+	--hover: var(--orange900);
+	--secondary-hover: var(--orange500);
+}
