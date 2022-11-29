@@ -1,19 +1,19 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123"
-    }
-  ],
-  "profile": {
-    "firstName": "Mikhail",
-    "lastName": "Rypta",
-    "age": 21,
-    "currency": "UAH",
-    "country": "Ukraine",
-    "city": "Chernivtsi",
-    "username": "senseyka",
-    "avatar": "https://cdn.kapwing.com/collections/video_image-x1Jgy3nJKT.jpeg"
-  }
+	"users": [
+		{
+			"id": "1",
+			"username": "admin",
+			"password": "123"
+		}
+	],
+	"profile": {
+		"firstName": "Mikhail",
+		"lastName": "Rypta",
+		"age": 21,
+		"currency": "UAH",
+		"country": "Ukraine",
+		"city": "Chernivtsi",
+		"username": "senseyka",
+		"avatar": "https://cdn.kapwing.com/collections/video_image-x1Jgy3nJKT.jpeg"
+	}
 }

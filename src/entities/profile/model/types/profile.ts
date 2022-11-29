@@ -8,6 +8,7 @@ export interface ProfileSchema {
 	isLoading: boolean;
 	error?: string;
 	isReadonly?: boolean;
+	validateErrors?: ValidateProfileError[];
 }
 
 export interface IProfile {
@@ -19,4 +20,12 @@ export interface IProfile {
 	city?: City;
 	username?: string;
 	avatar?: string;
+}
+
+export enum ValidateProfileError {
+	INCORRECT_USER_DATA = "INCORRECT_USER_DATA",
+	INCORRECT_AGE = "INCORRECT_AGE",
+	INCORRECT_COUNTRY = "INCORRECT_COUNTRY",
+	NO_DATA = "NO_DATA",
+	SERVER_ERROR = "SERVER_ERROR",
 }

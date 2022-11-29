@@ -11,15 +11,18 @@ import {
 	getProfileIsReadonly,
 	profileActions,
 	getProfileForm,
+	getProfileValidateErrors,
+	ValidateProfileError,
 } from "entities/profile";
 import { Currency } from "entities/currency";
 import { Country } from "entities/country";
+import { City } from "entities/city";
 import { classNames } from "shared/lib/classNames";
 import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { Error } from "shared/ui/Error";
 
 import { Header } from "./Header/Header";
-import { City } from "entities/city";
 
 // import cls from "./ProfilePage.module.scss";
 
@@ -35,11 +38,22 @@ export const ProfilePage = memo(({ className }: Props) => {
 	const error = useSelector(getProfileError);
 	const isLoading = useSelector(getProfileIsLoading);
 	const isReadonly = useSelector(getProfileIsReadonly);
+	const validateErrors = useSelector(getProfileValidateErrors) || [];
 
 	useDynamicModuleLoad({ reducers, removeAfterUnmount: true });
 
+	const validateErrorTranslates: Record<ValidateProfileError, string> = {
+		[ValidateProfileError.INCORRECT_AGE]: t("Server error on save data"),
+		[ValidateProfileError.INCORRECT_COUNTRY]: t("Incorrect country"),
+		[ValidateProfileError.INCORRECT_USER_DATA]: t("FirstName and LastName is required"),
+		[ValidateProfileError.NO_DATA]: t("No data"),
+		[ValidateProfileError.SERVER_ERROR]: t("Incorrect age"),
+	};
+
 	useEffect(() => {
-		dispatch(fetchProfileData());
+		if (__PROJECT__ !== "storybook") {
+			dispatch(fetchProfileData());
+		}
 	}, [dispatch]);
 
 	const onChangeFirstName = useCallback(
@@ -94,6 +108,10 @@ export const ProfilePage = memo(({ className }: Props) => {
 	return (
 		<div className={classNames("cls.wrapper", {}, [className])}>
 			<Header />
+
+			{validateErrors.length
+				? validateErrors.map((error) => <Error key={error}>{validateErrorTranslates[error]}</Error>)
+				: null}
 
 			<ProfileCard
 				data={formData}

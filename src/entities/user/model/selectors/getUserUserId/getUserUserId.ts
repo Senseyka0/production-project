@@ -1,3 +1,3 @@
 import { StateSchema } from "app/providers/store";
 
-export const getUserUserId = (state: StateSchema) => state.user.authData?.id || 0;
+export const getUserUserId = (state: StateSchema) => state?.user?.authData?.id;

@@ -11,3 +11,4 @@ export { getProfileIsReadonly } from "./getProfileIsReadonly/getProfileIsReadonl
 export { getProfileLastName } from "./getProfileLastName/getProfileLastName";
 export { getProfileUserName } from "./getProfileUserName/getProfileUserName";
 export { getProfileForm } from "./getProfileForm/getProfileForm";
+export { getProfileValidateErrors } from "./getProfileValidateErrors/getProfileValidateErrors";

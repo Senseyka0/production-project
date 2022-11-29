@@ -21,6 +21,7 @@ const config = (env: BuildEnv) => {
 		isDev,
 		port,
 		apiUrl,
+		project: "frontend",
 	});
 
 	return config;

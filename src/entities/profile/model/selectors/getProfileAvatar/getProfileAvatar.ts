@@ -1,3 +1,3 @@
 import { StateSchema } from "app/providers/store";
 
-export const getProfileAvatar = (state: StateSchema) => state?.profile?.data?.avatar || "";
+export const getProfileAvatar = (state: StateSchema) => state?.profile?.data?.avatar;
