@@ -1,32 +1,30 @@
-import { getUserIsAuth } from "entities/user";
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
-
-import { routeConfig } from "../lib/route";
+import { AppRouterProps, routeConfig } from "../lib/route";
+import { PrivateRoute } from "./PrivateRoute";
 
 export const AppRouter = () => {
-	const isAuth = useSelector(getUserIsAuth);
-
-	const routes = useMemo(
-		() =>
-			Object.values(routeConfig).filter((route) => {
-				if (route.authOnly && !isAuth) {
-					return false;
+	const renderWithWrapper = useCallback((route: AppRouterProps) => {
+		return (
+			<Route
+				key={route.path}
+				element={
+					route.requiredAuth ? (
+						<PrivateRoute>
+							<>{route.element}</>
+						</PrivateRoute>
+					) : (
+						route.element
+					)
 				}
-
-				return true;
-			}),
-		[isAuth]
-	);
+				{...route}
+			/>
+		);
+	}, []);
 
 	return (
 		<div className="page">
-			<Routes>
-				{routes.map((props) => (
-					<Route key={props.path} element={props.element} {...props} />
-				))}
-			</Routes>
+			<Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>
 		</div>
 	);
 };
