@@ -10,8 +10,6 @@ export const PrivateRoute = ({ children }: Props) => {
 
 	const isAuth = useSelector(getUserIsAuth);
 
-	console.log(isAuth);
-
 	if (!isAuth) {
 		return <Navigate to={Routes.HOME} state={{ from: location }} replace />;
 	}
