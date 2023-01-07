@@ -22,6 +22,12 @@ export const sidebarLinkList: ISidebarLink[] = [
 		Icon: <AboutUs fill="var(--primary-color)" width={22} />,
 	},
 	{
+		path: Routes.ARTICLES,
+		text: "Articles",
+		Icon: <Profile fill="var(--primary-color)" width={22} />,
+		authOnly: true,
+	},
+	{
 		path: Routes.PROFILE,
 		text: "Profile",
 		Icon: <Profile fill="var(--primary-color)" width={22} />,
