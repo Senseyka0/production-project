@@ -11,6 +11,7 @@ import { NavigateOptions, To } from "react-router-dom";
 
 import { ProfileSchema } from "entities/profile";
 import { UserSchema } from "entities/user";
+import { ArticleDetailsSchema } from "entities/article";
 import { LoginSchema } from "features/authByUsername";
 
 import { createReduxStore } from "./store";
@@ -21,6 +22,7 @@ export interface StateSchema {
 	// Async reducers
 	login?: LoginSchema;
 	profile?: ProfileSchema;
+	articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

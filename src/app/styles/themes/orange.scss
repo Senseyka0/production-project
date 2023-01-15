@@ -2,7 +2,14 @@
 .global-orange-theme {
 	--bg-color: var(--orange50);
 	--secondary-bg-color: var(--orange500);
-	--primary-color: var(--white);
+	--primary-color: var(--orange500);
 	--hover: var(--orange900);
 	--secondary-hover: var(--orange500);
+
+	// skeleton
+	--skeleton-color: #ffffff;
+	--skeleton-shadow: rgba(0 0 0 / 20%);
+
+	// code
+	--bg-code: #ffffff;
 }

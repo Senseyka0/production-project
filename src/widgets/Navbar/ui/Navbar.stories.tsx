@@ -23,6 +23,6 @@ export const Auth = Template.bind({});
 Auth.args = {};
 Auth.decorators = [
 	StoreDecorator({
-		user: { isAuth: true, authData: { username: "Hello world", id: "1" } },
+		user: { isAuth: true, authData: { username: "Hello world", id: 1 } },
 	}),
 ];
