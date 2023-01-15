@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import { useSelector } from "react-redux";
 
 import { getArticleData, getArticleError, getArticleIsLoading } from "entities/article";
@@ -7,19 +7,19 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Error } from "shared/ui/Error";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Avatar } from "shared/ui/Avatar";
-import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
+// import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 
-import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
+// import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
 import { getArticleById } from "../../model/services/getArticleById";
 import { ArticleBlock, BlockType } from "../../model/types/article";
 import { ArticleTextBlock, ArticleCodeBlock, ArticleImageBlock } from "../blocks";
 
 import cls from "./ArticleDetails.module.scss";
 
-const reducers: ReducersList = {
-	articleDetails: articleDetailsReducer,
-};
+// const reducers: ReducersList = {
+// 	articleDetails: articleDetailsReducer,
+// };
 
 const renderBlock = (block: ArticleBlock) => {
 	switch (block.type) {
@@ -40,7 +40,7 @@ const renderBlock = (block: ArticleBlock) => {
 export const ArticleDetails = memo(({ className, id }: Props) => {
 	const dispatch = useAppDispatch();
 
-	useDynamicModuleLoad({ reducers, removeAfterUnmount: true });
+	// useDynamicModuleLoad({ reducers, removeAfterUnmount: true });
 
 	const isLoading = useSelector(getArticleIsLoading);
 	const error = useSelector(getArticleError);

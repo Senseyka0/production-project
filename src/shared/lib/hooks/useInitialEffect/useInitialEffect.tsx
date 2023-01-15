@@ -8,6 +8,4 @@ export const useInitialEffect = (callback: () => void) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	return <div>useInitialEffect</div>;
 };
