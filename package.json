@@ -4,6 +4,9 @@
 	"main": "index.js",
 	"author": "senseyka <senseyika@gmail.com>",
 	"license": "MIT",
+	"browser": {
+		"[module-name]": false
+	},
 	"scripts": {
 		"start": "webpack serve --env port=3000",
 		"start:dev": "concurrently 'yarn start' 'yarn start:dev:server' 'yarn storybook'",
