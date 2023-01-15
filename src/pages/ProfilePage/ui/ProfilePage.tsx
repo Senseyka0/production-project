@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -20,6 +20,7 @@ import { City } from "entities/city";
 import { classNames } from "shared/lib/classNames";
 import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { Error } from "shared/ui/Error";
 
 import { Header } from "./Header/Header";
@@ -50,11 +51,7 @@ export const ProfilePage = memo(({ className }: Props) => {
 		[ValidateProfileError.SERVER_ERROR]: t("Incorrect age"),
 	};
 
-	useEffect(() => {
-		if (__PROJECT__ !== "storybook") {
-			dispatch(fetchProfileData());
-		}
-	}, [dispatch]);
+	useInitialEffect(() => dispatch(fetchProfileData()));
 
 	const onChangeFirstName = useCallback(
 		(firstName?: string) => {

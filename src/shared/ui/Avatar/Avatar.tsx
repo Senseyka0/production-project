@@ -17,5 +17,4 @@ export const Avatar = memo((props: Props) => {
 interface Props extends ImgHTMLAttributes<HTMLImageElement> {
 	className?: string;
 	size?: number;
-	src?: string;
 }

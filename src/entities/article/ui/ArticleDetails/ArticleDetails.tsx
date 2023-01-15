@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 import { getArticleData, getArticleError, getArticleIsLoading } from "entities/article";
 import { classNames } from "shared/lib/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
 import { Error } from "shared/ui/Error";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Avatar } from "shared/ui/Avatar";
+import { ReducersList, useDynamicModuleLoad } from "shared/lib/hooks/useDynamicModuleLoad";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 
-import { articleDetailsReducer } from "../../model/slices/ArticleDetailsSlice";
+import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
 import { getArticleById } from "../../model/services/getArticleById";
 import { ArticleBlock, BlockType } from "../../model/types/article";
 import { ArticleTextBlock, ArticleCodeBlock, ArticleImageBlock } from "../blocks";
@@ -45,11 +46,7 @@ export const ArticleDetails = memo(({ className, id }: Props) => {
 	const error = useSelector(getArticleError);
 	const articleData = useSelector(getArticleData);
 
-	useEffect(() => {
-		if (__PROJECT__ !== "storybook") {
-			dispatch(getArticleById(id));
-		}
-	}, [dispatch, id]);
+	useInitialEffect(() => dispatch(getArticleById(id)));
 
 	if (isLoading) {
 		return (

@@ -8,4 +8,6 @@ export interface UserSchema {
 export interface IUser {
 	id: number;
 	username: string;
+	avatar?: string;
+	role: string;
 }

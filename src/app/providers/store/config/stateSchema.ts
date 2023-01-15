@@ -13,6 +13,7 @@ import { ProfileSchema } from "entities/profile";
 import { UserSchema } from "entities/user";
 import { ArticleDetailsSchema } from "entities/article";
 import { LoginSchema } from "features/authByUsername";
+import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 
 import { createReduxStore } from "./store";
 
@@ -23,6 +24,7 @@ export interface StateSchema {
 	login?: LoginSchema;
 	profile?: ProfileSchema;
 	articleDetails?: ArticleDetailsSchema;
+	articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

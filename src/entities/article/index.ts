@@ -5,6 +5,6 @@ export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 
 export { BlockType } from "./model/types/article";
 
-export { articleDetailsReducer } from "./model/slices/ArticleDetailsSlice";
+export { articleDetailsReducer } from "./model/slices/articleDetailsSlice";
 
 export * from "./model/selectors";
